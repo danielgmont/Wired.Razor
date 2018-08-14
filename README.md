@@ -140,7 +140,7 @@ Only slightly different really:
 ```c#
 public ActionResult Index()
 {
-  var generator = new StandaloneGenerator(new Parser());
+  var generator = new StandaloneGenerator(new Parser(),HttpRuntime.AppDomainAppPath);
   var pdf = generator.GeneratePdf(model, Server.MapPath("~/Views/Pdf/ControllerlessPdfWithoutLayout.cshtml"));
   return new FileContentResult(pdf, "application/pdf");
 }
